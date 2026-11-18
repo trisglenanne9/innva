@@ -7,7 +7,7 @@ client companies from one screen.
 
 It has been in production since September 2026, posting into five client books.
 
-https://github.com/user-attachments/assets/951aaf89-9b57-4348-be11-0555d63f8443
+https://github.com/user-attachments/assets/b3ad2f3f-3e7b-4421-b96b-d4661fff6bd3
 
 *The 3-minute demo, with voiceover, chapter by chapter: add a client book (its bridge sets itself up) · upload a month as one ZIP ·
 supplier and customer recognised · accounts coded from history · post and verify · a payment linked to its invoice.*
