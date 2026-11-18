@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>InnVa walkthrough</title>
+<meta name="description" content="Click through InnVa, an app that reads supplier invoices with AI, has people check them and posts them to AutoCount. Built from screenshots of a demo copy with made-up companies.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2230%22%20fill%3D%22%23ff5a36%22%2F%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%2213.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20d%3D%22M23.5%2033L45%2066L74%2024%22%2F%3E%3Ccircle%20fill%3D%22%23ff5a36%22%20cx%3D%2222.5%22%20cy%3D%2230.5%22%20r%3D%2211.1%22%2F%3E%3Ccircle%20fill%3D%22%23ffc233%22%20cx%3D%2222.5%22%20cy%3D%2230.5%22%20r%3D%227.6%22%2F%3E%3C%2Fsvg%3E">
+<style>
+:root {
+  --bg: #f6f5f8; --surface: #ffffff; --ink: #1f1830; --muted: #5e5672; --faint: #8b849b; --rule: #e4e1ea;
+  --coral: #ff5a36; --coral-ink: #c43a1a; --plum: #2a1840; --cream: #fff4e8; --ok: #1f9d6a;
+  --shadow: 0 1px 2px rgb(20 10 40 / .06), 0 8px 28px rgb(20 10 40 / .08);
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #14111b; --surface: #1d1926; --ink: #f1eef7; --muted: #b3abc4; --faint: #8a8299; --rule: #2e2939;
+    --coral-ink: #ff8a6b; --cream: #2a1f1a; --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 8px 28px rgb(0 0 0 / .35); }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+a { color: var(--coral-ink); }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px; }
+header.top { padding: 22px 0 10px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+.logo .mark { width: 38px; height: 38px; }
+.logo .word { height: 22px; width: auto; }
+.top .links { margin-left: auto; display: flex; gap: 16px; flex-wrap: wrap; font-size: 14px; }
+.top .links a { text-decoration: none; font-weight: 600; }
+h1 { font-size: clamp(22px, 3.2vw, 30px); line-height: 1.2; margin: 8px 0 6px; letter-spacing: -.01em; }
+.lede { color: var(--muted); margin: 0 0 16px; max-width: 72ch; }
+.chapters { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 14px; padding: 0; list-style: none; }
+.chapters button { font: inherit; font-size: 13.5px; font-weight: 600; border: 1px solid var(--rule); background: var(--surface); color: var(--muted);
+  padding: 6px 12px; border-radius: 999px; cursor: pointer; }
+.chapters button[aria-current="true"] { background: var(--plum); border-color: var(--plum); color: #fff; }
+@media (prefers-color-scheme: dark) { .chapters button[aria-current="true"] { background: var(--coral); border-color: var(--coral); color: #1d1020; } }
+.chapters .num { opacity: .7; margin-right: 4px; }
+.player { background: var(--surface); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; }
+.stage { position: relative; width: 100%; aspect-ratio: 1440 / 900; background: #eef0f4; user-select: none; }
+.stage img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hot { position: absolute; border-radius: 10px; cursor: pointer; border: 3px solid var(--coral); background: rgb(255 90 54 / .10);
+  box-shadow: 0 0 0 4px rgb(255 255 255 / .9), 0 0 0 0 rgb(255 90 54 / .55); animation: pulse 1.6s ease-out infinite; }
+.hot:focus-visible { outline: 3px solid var(--plum); outline-offset: 4px; }
+.hot .tag { position: absolute; left: 50%; bottom: calc(100% + 10px); transform: translateX(-50%); white-space: nowrap; pointer-events: none;
+  background: var(--coral); color: #fff; font-size: 13px; font-weight: 700; padding: 4px 10px; border-radius: 999px; box-shadow: 0 2px 8px rgb(0 0 0 / .18); }
+.hot.below .tag { bottom: auto; top: calc(100% + 10px); }
+.hot.flash { animation: flash .5s ease-in-out 2; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 4px rgb(255 255 255 / .9), 0 0 0 0 rgb(255 90 54 / .55); } 70% { box-shadow: 0 0 0 4px rgb(255 255 255 / .9), 0 0 0 14px rgb(255 90 54 / 0); } 100% { box-shadow: 0 0 0 4px rgb(255 255 255 / .9), 0 0 0 0 rgb(255 90 54 / 0); } }
+@keyframes flash { 50% { transform: scale(1.08); } }
+@media (prefers-reduced-motion: reduce) { .hot, .hot.flash { animation: none; } }
+.bar { height: 4px; background: var(--rule); }
+.bar i { display: block; height: 100%; background: var(--coral); width: 0; transition: width .25s; }
+.caption { display: grid; grid-template-columns: 1fr auto; gap: 14px 20px; align-items: center; padding: 16px 20px 18px; }
+.caption .meta { font-size: 13px; color: var(--faint); font-weight: 600; letter-spacing: .02em; text-transform: uppercase; }
+.caption h2 { margin: 2px 0 4px; font-size: 19px; line-height: 1.3; }
+.caption p { margin: 0; color: var(--muted); max-width: 80ch; }
+.caption .hint { margin-top: 6px; font-size: 14px; color: var(--coral-ink); font-weight: 600; }
+.nav { display: flex; gap: 8px; }
+.nav button { font: inherit; font-weight: 700; font-size: 14.5px; border-radius: 10px; padding: 10px 16px; cursor: pointer; border: 1px solid var(--rule); background: var(--surface); color: var(--ink); }
+.nav button.primary { background: var(--coral); border-color: var(--coral); color: #fff; }
+.nav button:disabled { opacity: .45; cursor: default; }
+@media (max-width: 700px) {
+  .caption { grid-template-columns: 1fr; padding: 14px 16px 16px; }
+  .nav button { flex: 1; }
+  .hot .tag { font-size: 11px; padding: 3px 8px; bottom: calc(100% + 6px); }
+  .hot { border-width: 2px; border-radius: 6px; }
+}
+.note { color: var(--faint); font-size: 13.5px; margin: 10px 2px 0; }
+section.video { margin: 40px 0 10px; }
+section.video h2 { font-size: 22px; margin: 0 0 10px; }
+section.video video { width: 100%; border-radius: 14px; box-shadow: var(--shadow); background: #000; display: block; }
+footer { color: var(--faint); font-size: 13.5px; padding: 28px 0 40px; border-top: 1px solid var(--rule); margin-top: 36px; }
+.end { position: absolute; inset: 0; display: none; place-content: center; text-align: center; padding: 20px; background: rgb(255 244 232 / .94); color: var(--plum); }
+.end.on { display: grid; }
+.end h3 { margin: 0 0 6px; font-size: clamp(20px, 3vw, 28px); }
+.end p { margin: 0 0 16px; color: #5e5672; }
+.end .row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.end a, .end button { font: inherit; font-weight: 700; padding: 10px 16px; border-radius: 10px; border: 1px solid #e0cdbd; background: #fff; color: var(--plum); text-decoration: none; cursor: pointer; }
+.end .primary { background: var(--coral); border-color: var(--coral); color: #fff; }
+@media (prefers-color-scheme: dark) { .logo .word { color: hsl(11 80% 90%) !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="https://github.com/trisglenanne9/innva" aria-label="InnVa on GitHub"><svg class="mark" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><rect width="96" height="96" rx="30" fill="#ff5a36"/><path fill="none" stroke="#ffffff" stroke-width="13.5" stroke-linecap="round" stroke-linejoin="round" d="M23.5 33L45 66L74 24"/><circle fill="#ff5a36" cx="22.5" cy="30.5" r="11.1"/><circle fill="#ffc233" cx="22.5" cy="30.5" r="7.6"/></svg><svg class="word" style="color:var(--plum)" aria-label="InnVa" xmlns="http://www.w3.org/2000/svg" viewBox="110.361 10.645 181.808 55.204" role="img" aria-label="InnVa"><path fill="currentColor" d="M110.361 64.932L110.361 21.689L121.106 21.689L121.106 64.932ZM129.1 64.932L129.1 44.097L129.1 30.337L137.617 30.337L137.748 40.493L139.059 40.493C139.626 38.047 140.435 35.994 141.483 34.334C142.531 32.674 143.863 31.44 145.48 30.632C147.096 29.824 148.996 29.42 151.18 29.42C155.242 29.42 158.332 30.84 160.451 33.679C162.569 36.518 163.629 41.039 163.629 47.242L163.629 64.932L153.014 64.932L153.014 48.421C153.014 44.839 152.501 42.229 151.475 40.591C150.448 38.953 148.93 38.134 146.921 38.134C145.261 38.134 143.896 38.637 142.826 39.641C141.756 40.646 140.959 41.978 140.435 43.638C139.91 45.298 139.648 47.154 139.648 49.207L139.648 64.932ZM170.574 64.932L170.574 44.097L170.574 30.337L179.091 30.337L179.222 40.493L180.533 40.493C181.101 38.047 181.909 35.994 182.957 34.334C184.005 32.674 185.338 31.44 186.954 30.632C188.57 29.824 190.47 29.42 192.654 29.42C196.716 29.42 199.807 30.84 201.925 33.679C204.044 36.518 205.103 41.039 205.103 47.242L205.103 64.932L194.489 64.932L194.489 48.421C194.489 44.839 193.975 42.229 192.949 40.591C191.922 38.953 190.404 38.134 188.395 38.134C186.735 38.134 185.37 38.637 184.3 39.641C183.23 40.646 182.433 41.978 181.909 43.638C181.385 45.298 181.122 47.154 181.122 49.207L181.122 64.932Z"/><path fill="currentColor" d="M268.33 65.849C266.408 65.849 264.704 65.467 263.219 64.703C261.734 63.938 260.576 62.824 259.746 61.361C258.917 59.898 258.502 58.118 258.502 56.021C258.502 54.056 258.884 52.429 259.648 51.14C260.413 49.851 261.526 48.825 262.99 48.061C264.453 47.296 266.211 46.663 268.264 46.161C270.317 45.658 272.654 45.21 275.275 44.817C276.541 44.599 277.601 44.391 278.452 44.195C279.304 43.998 279.948 43.682 280.385 43.245C280.822 42.808 281.04 42.175 281.04 41.345C281.04 40.253 280.647 39.314 279.861 38.527C279.075 37.741 277.808 37.348 276.061 37.348C274.838 37.348 273.735 37.566 272.752 38.003C271.769 38.44 270.929 39.073 270.23 39.903C269.531 40.733 269.007 41.738 268.657 42.917L259.353 40.165C259.921 38.331 260.718 36.737 261.745 35.382C262.771 34.028 264.005 32.904 265.447 32.008C266.888 31.113 268.537 30.458 270.393 30.043C272.25 29.628 274.226 29.42 276.323 29.42C279.817 29.42 282.668 29.977 284.873 31.091C287.079 32.205 288.717 33.93 289.787 36.267C290.858 38.604 291.393 41.607 291.393 45.276L291.393 50.583C291.393 52.156 291.425 53.739 291.491 55.333C291.556 56.928 291.644 58.522 291.753 60.116C291.862 61.711 292.004 63.316 292.179 64.932L282.875 64.932C282.7 63.927 282.526 62.715 282.351 61.296C282.176 59.876 282.045 58.424 281.958 56.939L280.713 56.939C280.101 58.598 279.217 60.116 278.059 61.492C276.902 62.868 275.504 63.938 273.866 64.703C272.228 65.467 270.383 65.849 268.33 65.849ZM273.113 58.38C273.899 58.38 274.696 58.238 275.504 57.954C276.312 57.67 277.087 57.277 277.83 56.775C278.573 56.272 279.25 55.65 279.861 54.907C280.473 54.165 280.931 53.357 281.237 52.483L281.106 47.307L282.547 47.635C281.718 48.159 280.8 48.574 279.796 48.88C278.791 49.185 277.775 49.426 276.749 49.6C275.722 49.775 274.718 49.961 273.735 50.157C272.752 50.354 271.879 50.605 271.114 50.911C270.35 51.216 269.749 51.631 269.312 52.156C268.876 52.68 268.657 53.4 268.657 54.318C268.657 55.541 269.072 56.524 269.902 57.266C270.732 58.009 271.802 58.38 273.113 58.38Z"/><path fill="none" stroke="#ff5a36" stroke-width="13.43" stroke-linecap="round" stroke-linejoin="round" d="M217.32 29.08L233.21 58.22L249.1 17.36"/><circle fill="#ffc233" cx="217.05" cy="21.09" r="8.06"/></svg></a>
+    <nav class="links">
+      <a href="#video">Video</a>
+      <a href="https://github.com/trisglenanne9/innva">README</a>
+      <a href="https://github.com/trisglenanne9/innva/blob/main/docs/ARCHITECTURE.md">Architecture</a>
+      <a href="https://github.com/trisglenanne9/autocount-bridge">The bridge</a>
+    </nav>
+  </header>
+  <h1>Click through InnVa</h1>
+  <p class="lede">Supplier invoices read by AI, checked by people, posted to AutoCount. This walkthrough is made from screenshots of a demo copy of the app filled with <strong>made-up companies</strong>. Click the highlighted control on each screen, as you would in the real app.</p>
+
+  <ol class="chapters" id="chapters"></ol>
+
+  <div class="player">
+    <div class="stage" id="stage">
+      <img id="shot" alt="">
+      <div class="hot" id="hot" role="button" tabindex="0"><span class="tag" id="tag"></span></div>
+      <div class="end" id="end">
+        <div>
+          <h3>That’s the tour</h3>
+          <p>From a new client book to a payment knocked off its invoice, in 22 screens.</p>
+          <div class="row">
+            <button class="primary" id="restart">Start again</button>
+            <a href="#video">Watch the video</a>
+            <a href="https://github.com/trisglenanne9/innva/blob/main/docs/ARCHITECTURE.md">How it works</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bar"><i id="progress"></i></div>
+    <div class="caption">
+      <div>
+        <div class="meta" id="meta"></div>
+        <h2 id="title"></h2>
+        <p id="text"></p>
+        <div class="hint" id="hint"></div>
+      </div>
+      <div class="nav">
+        <button id="back">‹ Back</button>
+        <button id="next" class="primary">Next ›</button>
+      </div>
+    </div>
+  </div>
+  <p class="note">Tip: use the ← and → keys. Nothing here talks to a server: it is pictures and links only.</p>
+
+  <section class="video" id="video">
+    <h2>The 3-minute video</h2>
+    <video controls preload="metadata" poster="poster.png" src="innva-demo.mp4"></video>
+  </section>
+
+  <footer>Made by Christine Lee · Demo with made-up data · AutoCount is a product of its own vendor; this project is not affiliated with it.</footer>
+</div>
+<script>
+const DATA = {"width":1440,"height":900,"steps":[{"n":"01","chapter":"Add a client book","title":"Client books","text":"Admin › Client books: each card is one client company’s AutoCount book and the bridge that serves it.","img":"screens/01.webp","hot":{"x":1252.375,"y":231.8125,"w":133.03125,"h":31.59375},"label":"Add client book"},{"n":"02","chapter":"Add a client book","title":"A new client book","text":"Its name and its AutoCount database. With “Set up its bridge automatically” ticked, nobody builds the bridge by hand.","img":"screens/02.webp","hot":{"x":882.0625,"y":603.75,"w":92.9375,"h":36.796875},"label":"Add"},{"n":"03","chapter":"Add a client book","title":"The bridge builds itself","text":"A set-up service on the AutoCount server claims the book, builds its bridge, installs it as a service and enrols it with a single-use code, reporting each step here.","img":"screens/03.webp","hot":null,"label":null},{"n":"04","chapter":"Add a client book","title":"Ready","text":"The new book’s bridge has polled the app: the book is ready, and no key was typed by anyone.","img":"screens/04.webp","hot":null,"label":null},{"n":"05","chapter":"A month in one ZIP","title":"Upload","text":"Upload takes PDFs, photos, ZIPs or a whole folder. Mixed batch works out what each document is.","img":"screens/05.webp","hot":{"x":277,"y":174.6875,"w":213.046875,"h":123.359375},"label":"Mixed batch"},{"n":"06","chapter":"A month in one ZIP","title":"One ZIP, a month of documents","text":"A ZIP of five made-up documents: invoices, a sales invoice, a payment voucher and a bank slip.","img":"screens/06.webp","hot":{"x":298.796875,"y":632.0625,"w":97.75,"h":36.796875},"label":"Read 1 file"},{"n":"07","chapter":"A month in one ZIP","title":"Sorted into lanes","text":"Every page read by AI and sorted: three invoices (one of them a sales invoice) and two payments. Nothing is posted yet.","img":"screens/07.webp","hot":{"x":298.796875,"y":754.03125,"w":64.625,"h":36.796875},"label":"File 5"},{"n":"08","chapter":"Knows who is who","title":"The review queue","text":"The new documents are waiting. One is tagged AR Invoice: the app spotted a sales invoice among the bills.","img":"screens/08.webp","hot":{"x":1283.421875,"y":314.96875,"w":54.578125,"h":31},"label":"View"},{"n":"09","chapter":"Knows who is who","title":"A sales invoice, recognised","text":"Detected as an invoice to a customer (AR), and the customer matched by name, 100%: LUMINA RETAIL SDN BHD.","img":"screens/09.webp","hot":null,"label":null},{"n":"10","chapter":"Knows who is who","title":"A supplier, recognised","text":"Printed as “Metro Power Bhd”, matched to the supplier on file: METRO POWER BERHAD.","img":"screens/10.webp","hot":null,"label":null},{"n":"11","chapter":"Accounts coded from history","title":"One invoice, opened","text":"The document on the left, what the AI read on the right: supplier matched, numbers and dates filled.","img":"screens/11.webp","hot":{"x":992.34375,"y":188.3125,"w":108.328125,"h":38.96875},"label":"Line items"},{"n":"12","chapter":"Accounts coded from history","title":"Coded from history","text":"Every line already has an account, “as on PI-000118”: how this supplier was posted before. A saved rule or the AI fills any gap.","img":"screens/12.webp","hot":null,"label":null},{"n":"13","chapter":"Accounts coded from history","title":"Ready to post","text":"The server’s verdict: nothing left to fill in. Post stays disabled until it says so.","img":"screens/13.webp","hot":{"x":990.203125,"y":545.5625,"w":131.921875,"h":29.6875},"label":"Post to AutoCount"},{"n":"14","chapter":"Post and verify","title":"Posted","text":"The bridge posted it into AutoCount, which numbered it PI-000123.","img":"screens/14.webp","hot":{"x":41.796875,"y":380.34375,"w":194.40625,"h":44.875},"label":"Posted"},{"n":"15","chapter":"Post and verify","title":"Read back: Verified","text":"After posting, the app reads the invoice back out of AutoCount and checks it.","img":"screens/15.webp","hot":{"x":1229.71875,"y":268.46875,"w":81.484375,"h":31},"label":"Compare"},{"n":"16","chapter":"Post and verify","title":"Sent vs stored","text":"Field by field, what was sent beside what AutoCount stored: all 19 fields match.","img":"screens/16.webp","hot":{"x":41.796875,"y":332.46875,"w":194.40625,"h":44.875},"label":"Review"},{"n":"17","chapter":"A payment linked to its invoice","title":"Payments and supporting documents","text":"The ZIP’s payment voucher and bank slip, each waiting to be matched to what it pays.","img":"screens/17.webp","hot":{"x":303.59375,"y":633.21875,"w":1056.8125,"h":67.84375},"label":"PV-0458"},{"n":"18","chapter":"A payment linked to its invoice","title":"Money out, for GS-INV-2611-045","text":"Read as money out from Northwind, naming the invoice it pays. Ask AutoCount what this supplier still owes.","img":"screens/18.webp","hot":{"x":1043.609375,"y":433.53125,"w":163.796875,"h":33.515625},"label":"Request open items"},{"n":"19","chapter":"A payment linked to its invoice","title":"The knock-off, suggested","text":"The invoice it names is already ticked: 512.40 knocked off, nothing left unapplied.","img":"screens/19.webp","hot":{"x":370.59375,"y":626.109375,"w":159.25,"h":37.984375},"label":"Confirm knock-off"},{"n":"20","chapter":"A payment linked to its invoice","title":"Paid from the bank account","text":"Confirmed. Paid by: the Maybank account, one of AutoCount’s payment methods for this book.","img":"screens/20.webp","hot":{"x":690.71875,"y":697.9375,"w":224.265625,"h":37.984375},"label":"Post payment"},{"n":"21","chapter":"A payment linked to its invoice","title":"Confirm","text":"One last check before it is written into the client’s books.","img":"screens/21.webp","hot":{"x":786.640625,"y":505.109375,"w":123.359375,"h":36.796875},"label":"Post"},{"n":"22","chapter":"A payment linked to its invoice","title":"Payment posted","text":"AutoCount recorded the payment as PV-000058 and knocked it off invoice PI-000123.","img":"screens/22.webp","hot":null,"label":null}]};
+const W = DATA.width, H = DATA.height, S = DATA.steps;
+const $ = (id) => document.getElementById(id);
+const chapters = [...new Set(S.map((s) => s.chapter))];
+let i = 0;
+chapters.forEach((c, n) => {
+  const li = document.createElement('li');
+  const b = document.createElement('button');
+  b.innerHTML = '<span class="num">' + (n + 1) + '</span>' + c;
+  b.onclick = () => go(S.findIndex((s) => s.chapter === c));
+  li.appendChild(b); $('chapters').appendChild(li);
+});
+function go(n) {
+  i = Math.max(0, Math.min(S.length - 1, n));
+  const s = S[i];
+  $('end').classList.remove('on');
+  $('shot').src = s.img;
+  $('shot').alt = s.title + ': ' + s.text;
+  $('meta').textContent = 'Step ' + (i + 1) + ' of ' + S.length + ' · ' + s.chapter;
+  $('title').textContent = s.title;
+  $('text').textContent = s.text;
+  $('progress').style.width = ((i + 1) / S.length * 100) + '%';
+  const hot = $('hot');
+  if (s.hot) {
+    const pad = 6;
+    hot.style.display = '';
+    hot.style.left = ((s.hot.x - pad) / W * 100) + '%';
+    hot.style.top = ((s.hot.y - pad) / H * 100) + '%';
+    hot.style.width = ((s.hot.w + pad * 2) / W * 100) + '%';
+    hot.style.height = ((s.hot.h + pad * 2) / H * 100) + '%';
+    hot.classList.toggle('below', s.hot.y < 90);
+    $('tag').textContent = 'Click: ' + (s.label || 'here');
+    hot.setAttribute('aria-label', 'Click ' + (s.label || 'the highlighted control') + ' to continue');
+    $('hint').textContent = 'Click “' + (s.label || 'the highlighted control') + '” on the screen, or Next.';
+  } else {
+    hot.style.display = 'none';
+    $('hint').textContent = i < S.length - 1 ? 'Click Next to continue.' : '';
+  }
+  $('back').disabled = i === 0;
+  $('next').textContent = i === S.length - 1 ? 'Finish ›' : 'Next ›';
+  document.querySelectorAll('#chapters button').forEach((b, n) => b.setAttribute('aria-current', chapters[n] === s.chapter ? 'true' : 'false'));
+  if (S[i + 1]) { const p = new Image(); p.src = S[i + 1].img; }
+  try { history.replaceState(null, '', '#step-' + (i + 1)); } catch (e) {}
+}
+function next() { if (i === S.length - 1) { $('end').classList.add('on'); return; } go(i + 1); }
+$('next').onclick = next;
+$('back').onclick = () => go(i - 1);
+$('restart').onclick = () => go(0);
+$('hot').onclick = next;
+$('hot').onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); next(); } };
+$('shot').onclick = () => { const h = $('hot'); if (h.style.display === 'none') return next(); h.classList.remove('flash'); void h.offsetWidth; h.classList.add('flash'); };
+document.addEventListener('keydown', (e) => { if (e.target.closest('video')) return; if (e.key === 'ArrowRight') next(); if (e.key === 'ArrowLeft') go(i - 1); });
+const m = location.hash.match(/^#step-(\d+)$/);
+go(m ? Number(m[1]) - 1 : 0);
+</script>
+</body>
+</html>

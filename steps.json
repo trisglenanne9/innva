@@ -1,0 +1,289 @@
+{
+ "width": 1440,
+ "height": 900,
+ "steps": [
+  {
+   "n": "01",
+   "chapter": "Add a client book",
+   "title": "Client books",
+   "text": "Admin › Client books: each card is one client company’s AutoCount book and the bridge that serves it.",
+   "img": "screens/01.webp",
+   "hot": {
+    "x": 1252.375,
+    "y": 231.8125,
+    "w": 133.03125,
+    "h": 31.59375
+   },
+   "label": "Add client book"
+  },
+  {
+   "n": "02",
+   "chapter": "Add a client book",
+   "title": "A new client book",
+   "text": "Its name and its AutoCount database. With “Set up its bridge automatically” ticked, nobody builds the bridge by hand.",
+   "img": "screens/02.webp",
+   "hot": {
+    "x": 882.0625,
+    "y": 603.75,
+    "w": 92.9375,
+    "h": 36.796875
+   },
+   "label": "Add"
+  },
+  {
+   "n": "03",
+   "chapter": "Add a client book",
+   "title": "The bridge builds itself",
+   "text": "A set-up service on the AutoCount server claims the book, builds its bridge, installs it as a service and enrols it with a single-use code, reporting each step here.",
+   "img": "screens/03.webp",
+   "hot": {
+    "x": 295.59375,
+    "y": 474.671875,
+    "w": 509.8125,
+    "h": 43.375
+   },
+   "label": "Next"
+  },
+  {
+   "n": "04",
+   "chapter": "Add a client book",
+   "title": "Ready",
+   "text": "The new book’s bridge has polled the app: the book is ready, and no key was typed by anyone.",
+   "img": "screens/04.webp",
+   "hot": null,
+   "label": null
+  },
+  {
+   "n": "05",
+   "chapter": "A month in one ZIP",
+   "title": "Upload",
+   "text": "Upload takes PDFs, photos, ZIPs or a whole folder. Mixed batch works out what each document is.",
+   "img": "screens/05.webp",
+   "hot": {
+    "x": 277,
+    "y": 174.6875,
+    "w": 213.046875,
+    "h": 123.359375
+   },
+   "label": "Mixed batch"
+  },
+  {
+   "n": "06",
+   "chapter": "A month in one ZIP",
+   "title": "One ZIP, a month of documents",
+   "text": "A ZIP of five made-up documents: invoices, a sales invoice, a payment voucher and a bank slip.",
+   "img": "screens/06.webp",
+   "hot": {
+    "x": 298.796875,
+    "y": 632.0625,
+    "w": 97.75,
+    "h": 36.796875
+   },
+   "label": "Read 1 file"
+  },
+  {
+   "n": "07",
+   "chapter": "A month in one ZIP",
+   "title": "Sorted into lanes",
+   "text": "Every page read by AI and sorted: three invoices (one of them a sales invoice) and two payments. Nothing is posted yet.",
+   "img": "screens/07.webp",
+   "hot": {
+    "x": 298.796875,
+    "y": 754.03125,
+    "w": 64.625,
+    "h": 36.796875
+   },
+   "label": "File 5"
+  },
+  {
+   "n": "08",
+   "chapter": "Knows who is who",
+   "title": "The review queue",
+   "text": "The new documents are waiting. One is tagged AR Invoice: the app spotted a sales invoice among the bills.",
+   "img": "screens/08.webp",
+   "hot": {
+    "x": 1283.421875,
+    "y": 314.96875,
+    "w": 54.578125,
+    "h": 31
+   },
+   "label": "View"
+  },
+  {
+   "n": "09",
+   "chapter": "Knows who is who",
+   "title": "A sales invoice, recognised",
+   "text": "Detected as an invoice to a customer (AR), and the customer matched by name, 100%: LUMINA RETAIL SDN BHD.",
+   "img": "screens/09.webp",
+   "hot": null,
+   "label": null
+  },
+  {
+   "n": "10",
+   "chapter": "Knows who is who",
+   "title": "A supplier, recognised",
+   "text": "Printed as “Metro Power Bhd”, matched to the supplier on file: METRO POWER BERHAD.",
+   "img": "screens/10.webp",
+   "hot": null,
+   "label": null
+  },
+  {
+   "n": "11",
+   "chapter": "Accounts coded from history",
+   "title": "One invoice, opened",
+   "text": "The document on the left, what the AI read on the right: supplier matched, numbers and dates filled.",
+   "img": "screens/11.webp",
+   "hot": {
+    "x": 992.34375,
+    "y": 188.3125,
+    "w": 108.328125,
+    "h": 38.96875
+   },
+   "label": "Line items"
+  },
+  {
+   "n": "12",
+   "chapter": "Accounts coded from history",
+   "title": "Coded from history",
+   "text": "Every line already has an account, “as on PI-000118”: how this supplier was posted before. A saved rule or the AI fills any gap.",
+   "img": "screens/12.webp",
+   "hot": null,
+   "label": null
+  },
+  {
+   "n": "13",
+   "chapter": "Accounts coded from history",
+   "title": "Ready to post",
+   "text": "The server’s verdict: nothing left to fill in. Post stays disabled until it says so.",
+   "img": "screens/13.webp",
+   "hot": {
+    "x": 990.203125,
+    "y": 545.5625,
+    "w": 131.921875,
+    "h": 29.6875
+   },
+   "label": "Post to AutoCount"
+  },
+  {
+   "n": "14",
+   "chapter": "Post and verify",
+   "title": "Posted",
+   "text": "The bridge posted it into AutoCount, which numbered it PI-000123.",
+   "img": "screens/14.webp",
+   "hot": {
+    "x": 41.796875,
+    "y": 380.34375,
+    "w": 194.40625,
+    "h": 44.875
+   },
+   "label": "Posted"
+  },
+  {
+   "n": "15",
+   "chapter": "Post and verify",
+   "title": "Read back: Verified",
+   "text": "After posting, the app reads the invoice back out of AutoCount and checks it.",
+   "img": "screens/15.webp",
+   "hot": {
+    "x": 1229.71875,
+    "y": 268.46875,
+    "w": 81.484375,
+    "h": 31
+   },
+   "label": "Compare"
+  },
+  {
+   "n": "16",
+   "chapter": "Post and verify",
+   "title": "Sent vs stored",
+   "text": "Field by field, what was sent beside what AutoCount stored: all 19 fields match.",
+   "img": "screens/16.webp",
+   "hot": {
+    "x": 41.796875,
+    "y": 332.46875,
+    "w": 194.40625,
+    "h": 44.875
+   },
+   "label": "Review"
+  },
+  {
+   "n": "17",
+   "chapter": "A payment linked to its invoice",
+   "title": "Payments and supporting documents",
+   "text": "The ZIP’s payment voucher and bank slip, each waiting to be matched to what it pays.",
+   "img": "screens/17.webp",
+   "hot": {
+    "x": 303.59375,
+    "y": 633.21875,
+    "w": 1056.8125,
+    "h": 67.84375
+   },
+   "label": "PV-0458"
+  },
+  {
+   "n": "18",
+   "chapter": "A payment linked to its invoice",
+   "title": "Money out, for GS-INV-2611-045",
+   "text": "Read as money out from Northwind, naming the invoice it pays. Ask AutoCount what this supplier still owes.",
+   "img": "screens/18.webp",
+   "hot": {
+    "x": 1043.609375,
+    "y": 433.53125,
+    "w": 163.796875,
+    "h": 33.515625
+   },
+   "label": "Request open items"
+  },
+  {
+   "n": "19",
+   "chapter": "A payment linked to its invoice",
+   "title": "The knock-off, suggested",
+   "text": "The invoice it names is already ticked: 512.40 knocked off, nothing left unapplied.",
+   "img": "screens/19.webp",
+   "hot": {
+    "x": 370.59375,
+    "y": 626.109375,
+    "w": 159.25,
+    "h": 37.984375
+   },
+   "label": "Confirm knock-off"
+  },
+  {
+   "n": "20",
+   "chapter": "A payment linked to its invoice",
+   "title": "Paid from the bank account",
+   "text": "Confirmed. Paid by: the Maybank account, one of AutoCount’s payment methods for this book.",
+   "img": "screens/20.webp",
+   "hot": {
+    "x": 690.71875,
+    "y": 697.9375,
+    "w": 224.265625,
+    "h": 37.984375
+   },
+   "label": "Post payment"
+  },
+  {
+   "n": "21",
+   "chapter": "A payment linked to its invoice",
+   "title": "Confirm",
+   "text": "One last check before it is written into the client’s books.",
+   "img": "screens/21.webp",
+   "hot": {
+    "x": 786.640625,
+    "y": 505.109375,
+    "w": 123.359375,
+    "h": 36.796875
+   },
+   "label": "Post"
+  },
+  {
+   "n": "22",
+   "chapter": "A payment linked to its invoice",
+   "title": "Payment posted",
+   "text": "AutoCount recorded the payment as PV-000058 and knocked it off invoice PI-000123.",
+   "img": "screens/22.webp",
+   "hot": null,
+   "label": null
+  }
+ ]
+}
