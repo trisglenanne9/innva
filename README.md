@@ -7,9 +7,9 @@ client companies from one screen.
 
 It has been in production since September 2026, posting into five client books.
 
-https://github.com/user-attachments/assets/d749b667-8cef-4014-a84a-08d512da82f1
+https://github.com/user-attachments/assets/2f9b935e-a1c4-49d2-8bc3-954338e0ad3f
 
-*The 3-minute demo, chapter by chapter: add a client book (its bridge sets itself up) · upload a month as one ZIP ·
+*The 3-minute demo, with voiceover, chapter by chapter: add a client book (its bridge sets itself up) · upload a month as one ZIP ·
 supplier and customer recognised · accounts coded from history · post and verify · a payment linked to its invoice.*
 If the player doesn't load, [download the video](docs/video/innva-demo.mp4) (MP4, 9 MB).
 
