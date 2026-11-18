@@ -19,6 +19,7 @@ If the player doesn't load, [download the video](docs/video/innva-demo.mp4) (MP4
 
 | | |
 |---|---|
+| 🖱️ **[Click through the app](https://trisglenanne9.github.io/innva/)** | a 22-screen walkthrough in your browser: click the highlighted button on each screen, as in the real app |
 | 📐 **[Architecture](docs/ARCHITECTURE.md)** | where each part runs, how the two servers talk, the posting contract, the AI pipeline, security, delivery |
 | 📘 **[Operations guide](docs/GUIDE.md)** | how the firm uses it day to day, screen by screen, plus admin tasks and troubleshooting |
 | 🔌 **[The AutoCount bridge](https://github.com/trisglenanne9/autocount-bridge)** | the C# service on the AutoCount server: how it turns AutoCount's desktop SDK into a safe, outbound-only job worker |
